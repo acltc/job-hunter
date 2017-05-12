@@ -6,8 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
   <body>
     <% if notice %>
       <p class="notice"><%= notice %></p>
@@ -15,6 +16,54 @@
     <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <div class="row">
+      <header>
+      <div class="col s12 m4 l2">
+          <ul id="slide-out" class="side-nav fixed">
+            <li>
+              <div class="userView">
+                <div class="background">
+                  <%= image_tag 'actualize-logo.png'%>
+                </div>
+              </div>
+              <li><div class="divider"></div></li>
+            </li>
+            <li><a href="#!"><i class="material-icons">person_add</i>Create Lead</a></li>
+            <li><a href="#!"><i class="material-icons">people</i>All Leads</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to(destroy_user_session_path, :method => :delete) do %>
+                    <i class="material-icons">vpn_key</i><span>Log Out</span>
+                  <% end %>
+              </li>
+            <% end %>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </header>
+      <main>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Job Hunter</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">
+              <% if current_user.admin? %>
+                <p>admin</p>
+              <% else %>
+                <p>user</p>
+              <% end %></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="col s12 m8 l10">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+  </div>
   </body>
 </html>
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+</script>
