@@ -28,8 +28,14 @@
               </div>
               <li><div class="divider"></div></li>
             </li>
-            <li><a href="#!"><i class="material-icons">person_add</i>Create Lead</a></li>
-            <li><a href="#!"><i class="material-icons">people</i>All Leads</a></li>
+            <li><%= link_to new_lead_path do %>
+                  <i class="material-icons">person_add</i><span>Create Lead</span>
+                <% end %>
+            </li>
+            <li><%= link_to leads_path do %>
+                  <i class="material-icons">people</i><span>All Leads</span>
+                <% end %>
+            </li>
             <% if user_signed_in? %>
               <li><%= link_to(destroy_user_session_path, :method => :delete) do %>
                     <i class="material-icons">vpn_key</i><span>Log Out</span>
@@ -50,6 +56,7 @@
                 <p>admin</p>
               <% else %>
                 <p>user</p>
+                <%= current_user.id %>
               <% end %></a>
             </li>
           </ul>

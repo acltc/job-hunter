@@ -1,4 +1,4 @@
-<table class="bordered highlight">
+<table class="bordered highlight" id="lead-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <% @leads.each do |lead| %>
-      <tr>
+      <tr data-href= "<%= edit_lead_path(lead) %>" class="clickable-row" >
         <td><%= "#{lead.first_name} #{lead.last_name}" %></td>
         <td><%= lead.email %></td>
         <td><%= lead.phone %></td>
@@ -28,3 +28,10 @@
     <% end %>
   </tbody>
 </table>
+<script type="text/javascript">
+  $(document).ready(function($) {
+    $(".clickable-row").click(function() {
+      window.location = $(this).data("href");
+    });
+  });
+</script>
