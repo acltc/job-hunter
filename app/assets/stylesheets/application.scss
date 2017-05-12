@@ -12,22 +12,38 @@ $divider-color:        #BDBDBD !default;
 
 @import "materialize";
 
-header, main, footer {
-  padding-left: 100px;
-}
-
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;
   }
 }
 
-.nav-wrapper {
+@media only screen and (min-width: 993px) {
+  main {
+    padding-left: 200px;
+  }
+}
+
+nav {
   background-color: #F67000;
+  height: 84px;
 }
 
 .userView {
-  height: 100px;
+  height: 65px;;
   padding: 0;
   margin-top: 10px;
+}
+
+.side-nav {
+  width: 200px;
+  background-color: #f2f2f2;
+}
+
+.brand-logo {
+  max-width: 100%;
+}
+
+#lead-index-thead {
+  background-color: #F67000;
 }
