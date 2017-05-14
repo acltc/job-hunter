@@ -13,19 +13,8 @@
   <body>
     <header>
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper valign-wrapper">
           <a href="#" class="brand-logo">Job Hunter</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">
-              <% if current_user %>
-                <% if current_user.admin? %>
-                  <p>admin</p>
-                <% else %>
-                  <p>user <%= current_user.id %></p>
-                <% end %>
-              <% end %></a>
-            </li>
-          </ul>
         </div>
       </nav>
       <% if notice %>
@@ -39,7 +28,7 @@
       <li>
         <div class="userView">
           <div class="background">
-            <%= image_tag 'actualize-logo.png', class:"brand-logo"%>
+            <%= image_tag 'actualize-logo.png', class:"logo-image"%>
           </div>
         </div>
         <li><div class="divider"></div></li>
