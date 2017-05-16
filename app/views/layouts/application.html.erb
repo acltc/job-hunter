@@ -6,15 +6,58 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
   <body>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <header>
+      <nav>
+        <div class="nav-wrapper valign-wrapper">
+          <a href="#" class="brand-logo">Job Hunter</a>
+        </div>
+      </nav>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    </header>
+    <ul id="slide-out" class="side-nav fixed">
+      <li>
+        <div class="userView">
+          <div class="background">
+            <%= image_tag 'actualize-logo.png', class:"logo-image"%>
+          </div>
+        </div>
+        <li><div class="divider"></div></li>
+      </li>
+      <li><%= link_to new_lead_path do %>
+        <i class="material-icons">person_add</i><span>Create Lead</span>
+        <% end %>
+      </li>
+      <li><%= link_to leads_path do %>
+        <i class="material-icons">people</i><span>All Leads</span>
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+      <li><%= link_to(destroy_user_session_path, :method => :delete) do %>
+        <i class="material-icons">vpn_key</i><span>Log Out</span>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    <main>
+      <div class="row">
+        <div class="col s12 m10 l10">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+</script>

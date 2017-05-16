@@ -1,0 +1,61 @@
+@import "materialize/components/color";
+// $primary-color: color("blue", "lighten-2") !default;
+// $secondary-color: color("yellow", "base") !default;
+$primary-color-dark:   #455A64;
+$primary-color:        #607D8B;
+$primary-color-light:  #CFD8DC;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #9E9E9E;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+@import "materialize";
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  main {
+    padding-left: 200px;
+  }
+
+  nav .brand-logo {
+    padding-left: 215px;
+  }
+}
+
+nav {
+  background-color: #3949AB;
+  height: 84px;
+}
+
+.userView {
+  height: 65px;;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.side-nav {
+  width: 200px;
+  background-color: #FAFAFA;
+}
+
+table.highlight > tbody > tr:hover {
+  background-color: #e1e1e1;
+}
+
+.side-nav a:hover {
+  background-color: #e1e1e1;
+}
+
+.logo-image {
+  max-width: 100%;
+}
+
+#lead-index-thead {
+  background-color: #F67000;
+}

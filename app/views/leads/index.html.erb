@@ -1,0 +1,37 @@
+<table class="bordered highlight">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Company</th>
+      <th>LinkedIn</th>
+      <th>Email Sent?</th>
+      <th>Meeting Set?</th>
+      <th>Interview Set?</th>
+      <th>Job Offer?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leads.each do |lead| %>
+      <tr data-href= "<%= edit_lead_path(lead) %>" class="clickable-row" >
+        <td><%= "#{lead.first_name} #{lead.last_name}" %></td>
+        <td><%= lead.email %></td>
+        <td><%= lead.phone %></td>
+        <td><%= lead.company %></td>
+        <td><%= lead.linkedin_url %></td>
+        <td><%= lead.email_sent %></td>
+        <td><%= lead.meeting_set %></td>
+        <td><%= lead.interview_set %></td>
+        <td><%= lead.job_offer %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script type="text/javascript">
+  $(document).ready(function($) {
+    $(".clickable-row").click(function() {
+      window.location = $(this).data("href");
+    });
+  });
+</script>
