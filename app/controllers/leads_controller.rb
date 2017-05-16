@@ -38,7 +38,7 @@ class LeadsController < ApplicationController
   private
 
     def lead_params
-      parmas.require(:lead).permit(:first_name, :last_name, :email, :phone, :company, :linkedin_url, :email_sent, :meeting_set, :interview_set, :job_offer)
+      params.require(:lead).permit(:first_name, :last_name, :email, :phone, :company, :linkedin_url, :email_sent, :meeting_set, :interview_set, :job_offer, :user_id)
     end
 
     def authorize_lead_owner
