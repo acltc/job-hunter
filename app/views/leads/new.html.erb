@@ -1,1 +1,64 @@
-<h1>Create New Lead</h1>
+<h5 class="lead-form-header">Create New Lead</h5>
+<%= form_with(model: @lead, html: { class: "col s12 m8 offset-m2 l10 offset-l1 lead-form", id:"newLeadForm" }) do |f| %>
+  <div class="row">
+    <div class="input-field col s12 m4 l4">
+      <%= f.text_field :first_name, id:"first_name" %>
+      <%= f.label :first_name %>
+    </div>
+    <div class="input-field col s12 m4 l4">
+      <%= f.text_field :last_name, id:"last_name" %>
+      <%= f.label :last_name %>
+    </div>
+    <div class="input-field col s12 m4 l4">
+      <%= f.text_field :email, class:"required", id:"email" %>
+      <%= f.label :email %>
+      <div id="emailError"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 m4 l4">
+      <%= f.text_field :phone, id:"phone" %>
+      <%= f.label :phone %>
+    </div>
+    <div class="input-field col s12 m4 l4">
+      <%= f.text_field :company, id:"company" %>
+      <%= f.label :company %>
+    </div>
+    <div class="input-field col s12 m4 l4">
+      <%= f.text_field :linkedin_url, id:"linkedin_url" %>
+      <%= f.label :linkedin_url %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6 m3 l3">
+      <%= f.check_box :email_sent, id:"email_sent" %>
+      <%= f.label :email_sent, "Email Sent?", for:"email_sent" %>
+    </div>
+    <div class="input-field col s6 m3 l3">
+      <%= f.check_box :meeting_set, id:"meeting_set" %>
+      <%= f.label :meeting_set, "Meeting Set?", for:"meeting_set" %>
+    </div>
+    <div class="input-field col s6 m3 l3">
+      <%= f.check_box :interview_set, id:"interview_set" %>
+      <%= f.label :interview_set, "Interview Set?", for:"interview_set" %>
+    </div>
+    <div class="input-field col s6 m3 l3">
+      <%= f.check_box :job_offer, id:"job_offer" %>
+      <%= f.label :job_offer, "Job offer?", for:"job_offer" %>
+    </div>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="row">
+    <div class="input-field col s3">
+      <%= f.submit "Create Lead", class:"btn" %>
+    </div>
+  </div>
+<% end %>
+
+<script>
+  $(document).on('turbolinks:load', function () {
+    $("#newLeadForm").validate({
+      errorLabelContainer: "#emailError"
+    });
+  });
+</script>
