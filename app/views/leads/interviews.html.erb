@@ -1,0 +1,19 @@
+<h4 class="table-header">Interviews</h4>
+<table class="bordered">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Student Graduation Date</th>
+      <th>Company Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @interviews.each do |interview| %>
+      <tr>
+        <td><%= "#{interview.user.first_name} #{interview.user.last_name}" %></td>
+        <td><%= interview.user.graduation_date %></td>
+        <td><%= interview.company %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

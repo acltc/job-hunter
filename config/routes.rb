@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :leads
+  get 'interviews' => 'leads#interviews'
+  get 'job_offers' => 'leads#job_offers'
 end

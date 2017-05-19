@@ -1,5 +1,11 @@
 class LeadsController < ApplicationController
   before_action :authenticate_user!
+  before_action only: [:interviews, :job_offers] do
+    unless current_user && current_user.admin?
+      flash[:alert] = "You do not have access to that page."
+      redirect_to leads_path
+    end
+  end
 
   def index
     @leads = current_user.leads
@@ -35,6 +41,14 @@ class LeadsController < ApplicationController
     end
   end
 
+  def interviews
+    @interviews = Lead.where(interview_set: true)
+  end
+
+  def job_offers
+    @job_offers = Lead.where(job_offer: true)
+  end
+
   private
 
     def lead_params
@@ -44,7 +58,7 @@ class LeadsController < ApplicationController
     def authorize_lead_owner
       @lead = Lead.find(params[:id])
       unless @lead.user_id == current_user.id || current_user.admin
-        flash[:notice] = 'Access Denied'
+        flash[:alert] = "You do not have access to that page."
         redirect_to leads_path
       end
     end

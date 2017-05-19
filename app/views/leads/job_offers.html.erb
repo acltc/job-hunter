@@ -1,0 +1,19 @@
+<h4 class="table-header">Job Offers</h4>
+<table class="bordered">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Student Graduation Date</th>
+      <th>Company Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @job_offers.each do |offer| %>
+      <tr>
+        <td><%= "#{offer.user.first_name} #{offer.user.last_name}" %></td>
+        <td><%= offer.user.graduation_date %></td>
+        <td><%= offer.company %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
