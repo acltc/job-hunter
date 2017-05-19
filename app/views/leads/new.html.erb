@@ -47,6 +47,16 @@
       <%= f.label :job_offer, "Job offer?", for:"job_offer" %>
     </div>
   </div>
+  <div class="row">
+    <div class="input-field col s6 m3 offset-m6 l3 offset-l6" id="interviewer-name-hidden" style="display:none">
+      <%= f.text_field :interviewer_name %>
+      <%= f.label :interviewer_name, "Interviewer Name", for:"interviewer_name" %>
+    </div>
+    <div class="input-field col s6 m3 l3 " id="job-offer-status-hidden" style="display:none">
+      <%= f.select(:offer_status, options_for_select(["Accepted", "Declined", "Undecided"])) %>
+      <%= f.label :offer_status, "Offer Status", for:"offer_status" %>
+    </div>
+  </div>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="row">
     <div class="input-field col s3">
@@ -61,4 +71,19 @@
       errorLabelContainer: "#emailError"
     });
   });
+</script>
+<script type="text/javascript">
+ $("#interview_set").click(function () {
+   $("#interviewer-name-hidden").toggle(this.checked);
+ });
+</script>
+<script type="text/javascript">
+ $("#job_offer").click(function () {
+   $("#job-offer-status-hidden").toggle(this.checked);
+ });
+</script>
+<script type="text/javascript">
+$(document).on('turbolinks:load', function() {
+  $('select').material_select();
+});
 </script>
