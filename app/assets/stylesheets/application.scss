@@ -129,3 +129,50 @@ h5.alert.center-align {
   font-weight: 700;
   color: #212121;
 }
+
+.devise-form-wrapper h5 {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.devise-form-wrapper a {
+  padding: 0 10px;
+}
+
+.devise-form-wrapper .actions {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 320px) {
+  .devise-form-wrapper {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .devise-form {
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .devise-form-wrapper {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .devise-form {
+    width: 380px;
+  }
+}
+
+.devise-form {
+	margin: 20px auto;
+	padding: 3em 2em 2em 2em;
+	background: #fafafa;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.devise-btn {
+  width: 100%;
+}
