@@ -89,13 +89,8 @@ table.highlight > tbody > tr:hover {
   margin-bottom: 20px;
 }
 
-.notice-alert-wrapper .notice {
-  background-color: #FF5722;
-  color: #fff;
-}
-
 #notice-wrapper {
-  background-color: #FF5722;
+  background-color: #C5CAE9;
   color: #fff;
   width: 500px;
   height: 70px;
@@ -104,6 +99,19 @@ table.highlight > tbody > tr:hover {
 }
 
 h5.notice.center-align {
+  margin: 0 auto;
+}
+
+#alert-wrapper {
+  background-color: #FF5722;
+  color: #fff;
+  width: 500px;
+  height: 70px;
+  border-radius: 2px;
+  margin: 10px auto 20px auto;
+}
+
+h5.alert.center-align {
   margin: 0 auto;
 }
 
