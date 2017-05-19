@@ -36,6 +36,11 @@
         <% end %>
       </li>
       <% if current_user && current_user.admin? %>
+      <li>
+        <%= link_to users_path do %>
+          <i class="material-icons">school</i><span>Graduates</span>
+        <% end %>
+      </li>
         <li>
           <%= link_to interviews_path do %>
             <i class="material-icons">code</i><span>Interviews</span>
