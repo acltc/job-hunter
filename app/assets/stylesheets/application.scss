@@ -35,6 +35,11 @@ $error-color: color("red", "base") !default;
   nav .brand-logo {
     padding-left: 215px;
   }
+
+  .import-users-card {
+    width: 75%;
+    margin: 0 auto 40px auto;
+  }
 }
 
 nav {
@@ -69,7 +74,7 @@ table.highlight > tbody > tr:hover {
   background-color: #F67000;
 }
 
-.lead-form {
+.card {
   background-color: #F7F7F7;
   padding: 15px;
   border-radius: 5px;
@@ -78,8 +83,44 @@ table.highlight > tbody > tr:hover {
   padding-bottom: 20px !important;
 }
 
-.lead-form-header {
+.card-header {
   color: #757575;
   text-align: center;
   margin-bottom: 20px;
 }
+
+#notice-wrapper {
+  background-color: #C5CAE9;
+  color: #fff;
+  width: 500px;
+  height: 70px;
+  border-radius: 2px;
+  margin: 10px auto 20px auto;
+}
+
+h5.notice.center-align {
+  margin: 0 auto;
+}
+
+#alert-wrapper {
+  background-color: #FF5722;
+  color: #fff;
+  width: 500px;
+  height: 70px;
+  border-radius: 2px;
+  margin: 10px auto 20px auto;
+}
+
+h5.alert.center-align {
+  margin: 0 auto;
+}
+
+.user-upload-form {
+  width: 75%;
+  margin: 25px auto 0 auto;
+}
+
+#choose-file-btn {
+  font-size: 12px;
+}
+

@@ -1,5 +1,5 @@
-<h5 class="lead-form-header">Create New Lead</h5>
-<%= form_with(model: @lead, html: { class: "col s12 m8 offset-m2 l10 offset-l1 lead-form", id:"newLeadForm" }) do |f| %>
+<h5 class="card-header">Create New Lead</h5>
+<%= form_with(model: @lead, html: { class: "col s12 m8 offset-m2 l10 offset-l1 card", id:"newLeadForm" }) do |f| %>
   <div class="row">
     <div class="input-field col s12 m4 l4">
       <%= f.text_field :first_name, id:"first_name" %>
