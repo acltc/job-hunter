@@ -35,13 +35,17 @@
         <i class="material-icons">people</i><span>All Leads</span>
         <% end %>
       </li>
-      <% if user_signed_in? %>
-        <li><%= link_to(destroy_user_session_path, :method => :delete) do %>
-          <i class="material-icons">vpn_key</i><span>Log Out</span>
+      <% if current_user && current_user.admin? %>
+        <li>
+          <%= link_to interviews_path do %>
+            <i class="material-icons">code</i><span>Interviews</span>
           <% end %>
         </li>
-      <% end %>
-      <% if current_user && current_user.admin? %>
+        <li>
+          <%= link_to job_offers_path do %>
+            <i class="material-icons">attach_money</i><span>Job Offers</span>
+          <% end %>
+        </li>
         <li>
           <%= form_tag import_users_path, multipart: true, class:"user-upload-form" do %>
             <h6>Upload Users</h6>
@@ -55,6 +59,13 @@
             <%= button_tag(type: "submit", class:"btn-floating") do %>
               <i class="material-icons">file_upload</i>
             <% end %>
+          <% end %>
+        </li>
+      <% end %>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to(destroy_user_session_path, :method => :delete) do %>
+            <i class="material-icons">vpn_key</i><span>Log Out</span>
           <% end %>
         </li>
       <% end %>

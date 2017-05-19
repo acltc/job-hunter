@@ -117,10 +117,15 @@ h5.alert.center-align {
 
 .user-upload-form {
   width: 75%;
-  margin: 25px auto 0 auto;
+  margin: 25px auto 25px auto;
 }
 
 #choose-file-btn {
   font-size: 12px;
 }
 
+.table-header {
+  text-align: center;
+  font-weight: 700;
+  color: #212121;
+}
