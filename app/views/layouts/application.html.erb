@@ -36,10 +36,27 @@
         <% end %>
       </li>
       <% if user_signed_in? %>
-      <li><%= link_to(destroy_user_session_path, :method => :delete) do %>
-        <i class="material-icons">vpn_key</i><span>Log Out</span>
-        <% end %>
-      </li>
+        <li><%= link_to(destroy_user_session_path, :method => :delete) do %>
+          <i class="material-icons">vpn_key</i><span>Log Out</span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if current_user && current_user.admin? %>
+        <li>
+          <%= form_tag import_users_path, multipart: true, class:"user-upload-form" do %>
+            <h6>Upload Users</h6>
+            <div class="file-field input-field">
+              <div class="btn">
+                <span id="choose-file-btn">Choose File</span>
+                <%= file_field_tag :file %>
+              </div>
+              <input class="file-path validate" type="text"/>
+            </div>
+            <%= button_tag(type: "submit", class:"btn-floating") do %>
+              <i class="material-icons">file_upload</i>
+            <% end %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -66,7 +83,7 @@
 <script>
 $('document').ready(function() {
   setTimeout(function() {
-    $('#notice-alert-wrapper').slideUp();
+    $('#notice-wrapper').slideUp();
   }, 3000);
 });
 </script>
