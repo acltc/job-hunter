@@ -5,6 +5,7 @@
       <th>Student Name</th>
       <th>Student Graduation Date</th>
       <th>Company Name</th>
+      <th>Interviewer Name</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
         <td><%= "#{interview.user.first_name} #{interview.user.last_name}" %></td>
         <td><%= interview.user.graduation_date %></td>
         <td><%= interview.company %></td>
+        <td><%= interview.interviewer_name %></td>
       </tr>
     <% end %>
   </tbody>
