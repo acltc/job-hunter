@@ -70,6 +70,12 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    griddler (1.4.0)
+      htmlentities
+      rails (>= 3.2.0)
+    griddler-sendgrid (1.0.0)
+      griddler
+    htmlentities (4.3.4)
     i18n (0.8.1)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -188,6 +194,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise!
   faker
+  griddler
+  griddler-sendgrid
   jbuilder (~> 2.5)
   jquery-rails
   jquery-validation-rails
