@@ -4,6 +4,6 @@ class EmailProcessor
   end
 
   def process
-    Lead.create(email: email.to )
+    Lead.create(email: @email.to )
   end
 end
