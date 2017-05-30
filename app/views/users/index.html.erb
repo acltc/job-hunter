@@ -6,7 +6,6 @@
       <th>Email</th>
       <th>City</th>
       <th>Graduation Date</th>
-      <th>Accepted Offer?</th>
     </tr>
   </thead>
   <tbody>
@@ -16,11 +15,6 @@
         <td><%= user.email %></td>
         <td><%= user.city %></td>
         <td><%= user.graduation_date %></td>
-        <% if user.id == @accepted_offer[0].id %>
-          <td>YES</td>
-        <% else %>
-          <td>NO</td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
