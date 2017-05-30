@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(admin: false)
+    @accepted_offer = User.includes(:leads).where(leads: { offer_status: 'Accepted' })
   end
 
   def import

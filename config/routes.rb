@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :leads
   get 'interviews' => 'leads#interviews'
   get 'job_offers' => 'leads#job_offers'
+
+  # route that sendgrid will POST to for creating a new lead via email
+  mount_griddler
 end
