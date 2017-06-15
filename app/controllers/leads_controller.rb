@@ -40,7 +40,7 @@ class LeadsController < ApplicationController
   def update
     authorize_lead_owner
     if @lead.update(lead_params)
-      redirect_to @lead
+      redirect_to leads_path
     else
       render 'edit'
     end
