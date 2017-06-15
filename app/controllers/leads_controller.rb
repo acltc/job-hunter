@@ -8,7 +8,11 @@ class LeadsController < ApplicationController
   end
 
   def index
-    @leads = current_user.leads
+    if current_user && current_user.admin?
+      @leads = Lead.all
+    else
+      @leads = current_user.leads
+    end
   end
 
   def show
@@ -22,7 +26,8 @@ class LeadsController < ApplicationController
   def create
     @lead = Lead.new(lead_params)
     if @lead.save
-      redirect_to @lead
+      flash[:success] = "Lead saved!"
+      redirect_to leads_path
     else
       render 'new'
     end
