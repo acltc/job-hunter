@@ -6,7 +6,7 @@ class LeadsController < ApplicationController
       redirect_to leads_path
     end
   end
-
+ 
   def index
     @leads = current_user.leads
   end
