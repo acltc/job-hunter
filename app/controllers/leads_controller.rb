@@ -6,7 +6,7 @@ class LeadsController < ApplicationController
       redirect_to leads_path
     end
   end
-
+ 
   def index
     if current_user && current_user.admin?
       @leads = Lead.all
