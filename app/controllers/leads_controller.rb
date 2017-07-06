@@ -46,6 +46,15 @@ class LeadsController < ApplicationController
     end
   end
 
+  def destroy
+    @lead = Lead.find_by(id: params[:id])
+    if current_user.admin? || current_user == @lead.user
+      @lead.destroy
+      flash[:success] = "Lead Destroyed"
+    end
+    redirect_to '/'
+  end
+
   def interviews
     @interviews = Lead.where(interview_set: true)
   end

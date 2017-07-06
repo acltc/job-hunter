@@ -51,5 +51,8 @@
     <div class="input-field col s3">
       <%= f.submit "Update Lead", class:"btn" %>
     </div>
+    <div class="input-field col s3">
+      <%= link_to "Delete Lead", lead_path(@lead), { method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" }%> 
+    </div>
   </div>
 <% end %>
