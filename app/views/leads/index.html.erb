@@ -5,6 +5,7 @@
       <% if current_user && current_user.admin? %>
         <th>Grad Email</th>
       <% end %>
+      <th>Created At</th>
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
@@ -22,6 +23,7 @@
         <% if current_user && current_user.admin? %>
           <td><%= lead.user.email %></td>
         <% end %>
+        <td><%= lead.created_at.strftime("%m/%d/%Y") %></td>
         <td><%= "#{lead.first_name} #{lead.last_name}" %></td>
         <td><%= lead.email %></td>
         <td><%= lead.phone %></td>
