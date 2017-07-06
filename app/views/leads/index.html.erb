@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <% if current_user && current_user.admin? %>
-        <th>Grad Name</th>
+        <th>Grad Email</th>
       <% end %>
       <th>Name</th>
       <th>Email</th>
@@ -20,7 +20,7 @@
     <% @leads.each do |lead| %>
       <tr data-href= "<%= edit_lead_path(lead) %>" class="clickable-row" >
         <% if current_user && current_user.admin? %>
-          <td><%= lead.user.full_name %></td>
+          <td><%= lead.user.email %></td>
         <% end %>
         <td><%= "#{lead.first_name} #{lead.last_name}" %></td>
         <td><%= lead.email %></td>
