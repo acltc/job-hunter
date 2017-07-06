@@ -11,4 +11,8 @@ class User < ApplicationRecord
       User.create! row.to_hash
     end
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
