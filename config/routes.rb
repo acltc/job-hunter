@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'leads#index'
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users do
     collection { post :import }
   end
