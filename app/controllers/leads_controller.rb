@@ -9,9 +9,9 @@ class LeadsController < ApplicationController
  
   def index
     if current_user && current_user.admin?
-      @leads = Lead.all
+      @leads = Lead.all.order(created_at: :desc)
     else
-      @leads = current_user.leads
+      @leads = current_user.leads.order(created_at: :desc)
     end
   end
 
