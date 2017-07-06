@@ -35,8 +35,8 @@
         <i class="material-icons">people</i><span>All Leads</span>
         <% end %>
       </li>
-      <li><%= link_to 'users/edit' do %>
-        <i class="material-icons">mood</i><span>Update My Profile</span>
+      <li><%= link_to '/users/edit' do %>
+        <i class="material-icons">mood</i><span>Edit Profile</span>
         <% end %>
       </li>
       <% if current_user && current_user.admin? %>
