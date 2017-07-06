@@ -24,7 +24,7 @@ class LeadsController < ApplicationController
   end
 
   def create
-    @lead = Lead.new(lead_params)
+    @lead = current_user.leads.new(lead_params)
     if @lead.save
       flash[:success] = "Lead saved!"
       redirect_to leads_path
@@ -66,7 +66,7 @@ class LeadsController < ApplicationController
   private
 
     def lead_params
-      params.require(:lead).permit(:first_name, :last_name, :email, :phone, :company, :linkedin_url, :email_sent, :meeting_set, :interview_set, :job_offer, :user_id)
+      params.require(:lead).permit(:first_name, :last_name, :email, :phone, :company, :linkedin_url, :email_sent, :meeting_set, :interview_set, :job_offer)
     end
 
     def authorize_lead_owner
